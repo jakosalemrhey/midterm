@@ -304,24 +304,231 @@ button:hover{
   overflow: hidden;
 }
 
+.Service-Card img{
+  width: 100%;
+}
+
+.Service-Card:hover{
+  background-color: rgb(1, 27, 8);
+  color: #fff;
+  transition: all .6s;
+  cursor: pointer;
+}
+
+.Service-Content{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+}
+
+.Service-Content img{
+  height: 80px;
+  width: 80px;
+  padding: 20px;
+  position: absolute;
+  bottom: -26%;
+  right: -14%;
+  border-radius: 50%;
+  background-color: rgba(0,24,25);
+  animation: pluse 1s infinite forwards;
+  box-shadow: 0 0 0 20px rgba(0,128,0,0);
+}
+
+@keyframes pluse {
+  0%{
+    box-shadow: 0 0 0 0px rgba(0,128,0,0);
+  }
+  50%{
+    box-shadow: 0 0 0 20px rgba(0,128,0,0.2);
+  }
+  100%{ 
+    box-shadow: 0 0 0 20px rgba(3, 194, 228, 0.817);
+  } 
+}
+
+.Service-Content h3{
+  font-size: 25px;
+}
+
+.Line{
+  height: 5px;
+  width: 40px;
+  background-color: rgb(121,185,0);
+}
 
 
+/* SKILLS SECTION */
+
+.skill{
+  gap: 100px  ;
+}
 
 
+.skills_content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.skills_content p{
+  margin: 20px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skills_content p{
+  margin: 20px 0;
+}
 
 
+.Headings{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: flex-start;
+}
+
+.Headings span{
+  color: rgb(121,185,0);
+  font-size: 1.5rem;
+}
+
+.Headings h1{
+  font-size: 3rem;
+  font-weight: 600;
+  width: 90%;
+  line-height: 3.5rem;
+}
+
+.Headings h1 span{
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.skills_img{
+  width: 50%;
+}
+
+.skills_img img{
+  width: 100%;
+}
+
+.skills_infos{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.skills_info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.skills_info h1{
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.proges{
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background-color: rgb(0,24,25);
+  position: relative;
+}
+
+.proges:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background-color: rgb(121,185,0);
+}
+
+.proges:before{
+  content: '70%';
+  position: absolute;
+  top: -30px;
+  left: 68%;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.skills_infos .skills_info:last-child .proges:after{
+  width: 80% !important;
+}
+
+.skills_infos .skills_info:last-child .proges::before{
+  left: 78% !important;
+  content: '80%';
+}
 
 
+ /* COUNTER SECTION */
 
+ .counter{
+  background-image: url(images/counter-bg.png);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  place-content: center;
+  place-items: center;
+  gap: 10px;
+ }
 
+ .count_box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
 
+ .counter_box img{
+  margin: 20px 0;
+  transition: .5s;
+ }
 
+.count_box h1{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 2rem;
+  transition: .3s;
+}
 
+.count_box h2{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.8rem;
+  transition: .3s;
+}
 
+.count_box:hover img{
+  filter: invert(100%);
+  cursor: pointer;
+}
 
-
-
-
+.count_box:hover h1,
+.count_box:hover h2{
+  color: #000;
+}
 
 
 
@@ -391,6 +598,16 @@ button:hover{
     flex-direction: column;
     align-items: flex-start;
   }
+  .skills{
+    flex-direction: column;
+  }
+  .skills_content,
+  .skills_img{
+    width: 100%;
+  }
+  .counter{
+    grid-template-columns: repeat(3,1fr);
+  }
 }
 @media (max-width: 900px) {
   .Social{
@@ -402,6 +619,9 @@ button:hover{
   .header-content h1{
     font-size: 3rem;
     line-height: 3.5rem;
+  }
+  .counter{
+    grid-template-columns: repeat(2,1fr);
   }
 }
 @media (max-width: 768px) {
@@ -428,5 +648,15 @@ button:hover{
   }
   .nav-btn i{
     margin-right: 0px;
+  }
+  .Headings h1{
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .counter{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    grid-template-columns: repeat(1,1fr);
   }
 }
